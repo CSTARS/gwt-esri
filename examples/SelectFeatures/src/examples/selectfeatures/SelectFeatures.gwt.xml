@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='selectfeatures'>
+
+  <inherits name='com.google.gwt.user.User'/>
+  <inherits name='com.esri.gwt.EsriGwt'/>
+
+  <script src="http://serverapi.arcgisonline.com/jsapi/arcgis/?v=2.1" />
+  <stylesheet src="http://serverapi.arcgisonline.com/jsapi/arcgis/2.1/js/dojo/dijit/themes/claro/claro.css" />
+
+  <entry-point class='examples.selectfeatures.client.SelectFeatures'/>
+
+  <!-- Specify the paths for translatable code                    -->
+  <source path='client'/>
+
+</module>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='smartesri'>
+  <!-- Inherit the core Web Toolkit stuff.                        -->
+  <inherits name='com.google.gwt.user.User'/>
+  <inherits name='com.esri.gwt.EsriGwt' />
+  <inherits name='com.smartgwt.SmartGwt' />
+  <inherits name='com.google.gwt.user.theme.clean.Clean'/>
+
+
+  <!-- Specify the app entry point class.                         -->
+  <entry-point class='org.jrmerz.example.smartesri.client.SmartEsri'/>
+  
+   <script src="http://serverapi.arcgisonline.com/jsapi/arcgis/?v=2.6" />
+  <stylesheet src="http://serverapi.arcgisonline.com/jsapi/arcgis/2.6/js/dojo/dijit/themes/tundra/tundra.css" />
+
+  <!-- Specify the paths for translatable code                    -->
+  <source path='client'/>
+
+</module>

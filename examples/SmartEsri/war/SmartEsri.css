@@ -1,0 +1,22 @@
+.root {
+	margin: 30px;
+	box-shadow: 0 0 10px #666666;
+	-moz-box-shadow: 0 0 10px #666666;	
+	-webkit-box-shadow: 0 0 10px #666666;	
+}
+
+.loading {
+	color: #666666;
+	text-align: center;
+	padding: 10px;
+	border-left: 1px solid #A7ABB4;
+	border-right: 1px solid #A7ABB4;
+	border-bottom: 1px solid #A7ABB4;
+	background-color: #eeeeee;
+}
+
+.header {
+	color: #666666;
+	font-size: 40px;
+	padding: 10px;
+}
