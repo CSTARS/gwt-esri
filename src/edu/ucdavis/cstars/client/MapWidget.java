@@ -1168,14 +1168,12 @@ public class MapWidget {
 	 * @param handler - Fires when the first or base layer has been successfully added to the map.
 	 */
 	public native void addLoadHandler(MapLoadHandler handler) /*-{
-		console.log("setting load Handler");
-		console.log(this.@edu.ucdavis.cstars.client.MapWidget::map);
+		var mapWidget = this;
 		$wnd.dojo.connect(
 			this.@edu.ucdavis.cstars.client.MapWidget::map,
 			"onLoad",
 			function(map) {
-				console.log("here");
-				handler.@edu.ucdavis.cstars.client.event.MapLoadHandler::onLoad()();
+				handler.@edu.ucdavis.cstars.client.event.MapLoadHandler::onLoad(Ledu/ucdavis/cstars/client/MapWidget;)(mapWidget);
 			}
 		);
 	}-*/;

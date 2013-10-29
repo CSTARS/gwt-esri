@@ -14,6 +14,10 @@ public class Color extends JavaScriptObject {
 	public static native Color create() /*-{
 		return new $wnd.dojo.Color();
 	}-*/;
+
+	public static native Color create(JavaScriptObject color) /*-{
+       return new $wnd.dojo.Color(color);
+    }-*/;
 	
 	public static native Color create(String color) /*-{
 		return new $wnd.dojo.Color(color);
