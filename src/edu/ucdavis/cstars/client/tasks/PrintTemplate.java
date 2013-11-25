@@ -117,6 +117,15 @@ public class PrintTemplate extends JavaScriptObject {
 		_setFormat(format.getValue());
 	}
 	
+	/**
+     * Set the format parameter.
+     * 
+     * @param format - The print output format.
+     */
+    public final void setFormat(String format) {
+        _setFormat(format);
+    }
+	
 	private final native void _setFormat(String format) /*-{
 		this.format = format;
 	}-*/;
