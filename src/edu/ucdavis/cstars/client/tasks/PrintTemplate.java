@@ -274,6 +274,13 @@ public class PrintTemplate extends JavaScriptObject {
 			this["scalebarUnit"] = scalebarUnit;
 		}-*/;
 		
+		public final native void setCustomTextElement(String parameter, String value) /*-{
+		    if( !this.customTextElements ) this.customTextElements = [];
+		    var obj ={};
+		    obj[parameter] = value;
+		    this.customTextElements.push(obj);
+		}-*/;
+		
 		/**
 		 * Set the legendLayers parameter.
 		 * 

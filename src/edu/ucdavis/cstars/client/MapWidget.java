@@ -252,12 +252,13 @@ public class MapWidget {
 	 * Create esri.map object for IE using id of Div element and options
 	 */
 	private native JavaScriptObject create(String id, Options options) /*-{
-		console.log(id);
-		console.log(options);
+		
 		options.zoom = 3;
 		options.center = [-56.049, 38.485];
 		
-		
+		console.log($wnd.esri);
+		console.log(id);
+        console.log(options);
 		
 		var map = new $wnd.esri.Map(id, options);
 		map["__gwt_MapWidget"] = this;
