@@ -1,4 +1,11 @@
 *.class
+# Exclude Eclipse config files (they'll be created by m2e).
+.classpath
+.project
+.settings
+
 .DS_Store
 /doc
 war/WEB-INF/classes
+# Exclude maven build directory...
+/target/
