@@ -9,3 +9,4 @@
 war/WEB-INF/classes
 # Exclude maven build directory...
 /target/
+/bin/
