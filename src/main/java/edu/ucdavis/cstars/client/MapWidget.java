@@ -1472,6 +1472,11 @@ public class MapWidget {
 		
 		protected Options() {}
 		
+    public static Options create() {
+      Options options = JavaScriptObject.createObject().cast();
+      return options;
+    };
+    
 		public static Options create(BaseMap basmap) {
 			Options options = JavaScriptObject.createObject().cast();
 			options.setBaseMap(basmap);
@@ -1489,7 +1494,6 @@ public class MapWidget {
 		private final native void _setBaseMap(String basemap) /*-{
 			this["basemap"] = basemap;
 		}-*/;
-		
 		
 		/**
 		 * When true, graphics are displayed during panning. When false, the graphics 
@@ -1617,6 +1621,15 @@ public class MapWidget {
 		 */
 		public final native void setResizeDelay(int resizeDelay) /*-{
 			this["resizeDelay"] = resizeDelay;
+		}-*/;
+		
+		/**
+		 * Enable or disable map attribution display. 
+		 * 
+		 * @param attribution
+		 */
+		public final native void setShowAttribution(boolean attribution) /*-{
+		  this["showAttribution"] = attribution;
 		}-*/;
 		
 		/**
