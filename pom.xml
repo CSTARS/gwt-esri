@@ -9,6 +9,13 @@
   <packaging>jar</packaging>
   <version>0.10-SNAPSHOT</version>
 
+  <licenses>
+    <license>
+      <name>GNU Library or Lesser General Public License (LGPL)</name>
+      <url>http://www.gnu.org/licenses/lgpl.html</url>
+    </license>
+  </licenses>
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <!-- Convenience property to set the GWT version -->
