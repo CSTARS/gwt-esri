@@ -1,8 +1,6 @@
 package edu.ucdavis.cstars.client.dijits;
 
 import com.google.gwt.core.client.JavaScriptObject;
-import com.google.gwt.event.logical.shared.AttachEvent;
-import com.google.gwt.event.logical.shared.AttachEvent.Handler;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.SimplePanel;
 
@@ -26,7 +24,7 @@ public class OverviewMap extends Composite {
 
 	private SimplePanel panel = new SimplePanel();
 	private Parameters parameters;
-	protected JavaScriptObject jso;
+	private JavaScriptObject jso;
 	
 	/**
 	 * Creates a new OverviewMap object.
@@ -40,18 +38,11 @@ public class OverviewMap extends Composite {
 		parameters = params;
 		
 		initWidget(panel);
-		
-		addAttachHandler(new Handler(){
-			@Override
-			public void onAttachOrDetach(AttachEvent event) {
-				if( jso == null ) jso = create(parameters);
-			}
-		});
-		
+		jso = create(parameters);
 	}
 	
 	private native JavaScriptObject create(Parameters params) /*-{
-		return new $wnd.esri.dijit.OverviewMap(params, this.@edu.ucdavis.cstars.client.dijits.OverviewMap::getElement()());
+		return new $wnd.esri.dijit.OverviewMap(params);
 	}-*/;
 	
 	/**
