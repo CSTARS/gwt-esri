@@ -23,6 +23,19 @@ public class ESRI {
 	}-*/;
 
 	/**
+	 * Whether or not to detect support for cross-origin resource sharing (CORS). 
+	 * Setting this to false will stop the API from sending requests that result in 
+	 * "XMLHttpRequest cannot load http://some.url.com/ArcGIS/rest/info?f=json. 
+	 * Origin http://yourapp.com is not allowed by Access-Control-Allow-Origin." 
+	 * messages in browser developer tools but it will also prevent the API from 
+	 * discovering that a resource supports CORS if it is not explicitly added to 
+	 * esriConfig.defaults.io.corsEnabledServers.
+	 */
+	public static native void setCorsDetectionEnabled(boolean enabled) /*-{
+    $wnd.esriConfig.defaults.io.corsDetection = enabled;
+	}-*/;
+	
+	/**
 	 * Specify an array of servers with cross-origin resource sharing enabled. Cross-Origin 
 	 * Resource Sharing (CORS) allows web applications to bypass the browser's same origin 
 	 * policy file and access resources or services on different servers/domains. When both 
