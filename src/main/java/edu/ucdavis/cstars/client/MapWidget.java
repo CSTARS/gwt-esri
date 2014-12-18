@@ -1591,6 +1591,24 @@ public class MapWidget {
 			this["logo"] = logo;
 		}-*/;
 
+    /**
+     * Maximum visible scale of the map.
+     * 
+     * @since 3.3
+     */
+    public final native void setMaxScale(double maxScale) /*-{
+      this["maxScale"] = maxScale;
+    }-*/;
+  
+		/**
+		 * Minimum visible scale of the map.
+		 * 
+		 * @since 3.3
+		 */
+		public final native void setMinScale(double minScale) /*-{
+		  this["minScale"] = minScale;
+		}-*/;
+		
 		/**
 		 * Displays pan buttons on map. When false, the pan arrows never
 		 * display. The default is false. 
