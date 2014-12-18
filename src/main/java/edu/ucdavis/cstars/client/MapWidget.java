@@ -90,17 +90,8 @@ public class MapWidget {
 	 * @param onLoad - This is the map load handler to be fired once the map as been added to the dom and the
 	 * first layer has been initialized.  Can be null. 
 	 */
-	public MapWidget(SimplePanel mapPanel,  MapLoadHandler onLoad) {
-	    	assertLoaded();
-
-	    	this.mapPanel = mapPanel;
-	
-	    	
-	    	map = create(mapPanel.getElement().getId());
-			if( onLoad != null ) addLoadHandler(onLoad);
-
-			// inject controls layer
-			initControls();
+	public MapWidget(SimplePanel mapPanel, MapLoadHandler onLoad) {
+	  this(mapPanel, onLoad, null);
 	}
 
 	/**
@@ -113,16 +104,21 @@ public class MapWidget {
 	 * @param options - Optional parameters for the map.
 	 */
 	public MapWidget(SimplePanel mapPanel, MapLoadHandler onLoad, Options options) {
-	    assertLoaded();
+	  assertLoaded();
 	    
 	  this.mapPanel = mapPanel;
 
-	   map = create(mapPanel.getElement().getId(), options);
-	   if( onLoad != null ) addLoadHandler(onLoad);
+	  if (options == null) {
+	    map = create(mapPanel.getElement().getId());
+	  }
+	  else {
+	    map = create(mapPanel.getElement().getId(), options);
+	  }
+	  
+	  if( onLoad != null ) addLoadHandler(onLoad);
 	   
 		// TODO: inject controls layer
 		initControls();
-
 	}
 	
 	private void initControls() {
@@ -130,7 +126,6 @@ public class MapWidget {
 		
 		// TODO: inject the controls layer back into the map
 		mapPanel.add(controlLayer);
-		
 		
 		controlHandler = new ControlHandler(this, controlLayer);
 	}
@@ -143,7 +138,7 @@ public class MapWidget {
 	 * 
 	 * @param control - Control to be added to the map
 	 */
-	public void addControl(Control control){
+	public void addControl(Control control) {
 		controlHandler.addControl(control);
 	}
 	
