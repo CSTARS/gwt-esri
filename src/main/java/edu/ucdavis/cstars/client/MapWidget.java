@@ -63,11 +63,11 @@ import edu.ucdavis.cstars.client.layers.Layer;
  * @author Justin Merz
  */
 public class MapWidget {
+  // counter used for creating unique map id's
+  private static int nextMapId = 0;
 
 	// esri.map object
 	private JavaScriptObject map = null;
-	// counter used for creating unique map id's
-	private static int nextMapId = 0;
 	
 	// Gwt added Control Layer
 	private AbsolutePanel controlLayer = new AbsolutePanel();
@@ -107,6 +107,12 @@ public class MapWidget {
 	  assertLoaded();
 	    
 	  this.mapPanel = mapPanel;
+	  
+	  // The ESRI api requires the wrapping div to have an id so automatically add one
+	  // if there isn't one set already...
+	  if (mapPanel.getElement() == null) {
+	    mapPanel.getElement().setId("map-widget-" + (++nextMapId));
+	  }
 
 	  if (options == null) {
 	    map = create(mapPanel.getElement().getId());
