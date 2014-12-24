@@ -41,4 +41,7 @@ public class Ring extends JavaScriptObject {
 		return this[index];
 	}-*/;
 	
+	 public final native boolean isClockwise() /*-{
+     return $wnd.esri.geometry.isClockwise(this);
+   }-*/;
 }
