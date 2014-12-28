@@ -1,11 +1,12 @@
 package edu.ucdavis.cstars.client.geometry;
 
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.core.client.JsArray;
 import com.google.gwt.core.client.JsArrayNumber;
 
 import edu.ucdavis.cstars.client.Util;
 
-public class Ring extends JavaScriptObject {
+public class Ring extends JsArray<Point> {
 	
 	protected Ring () {}
 	
