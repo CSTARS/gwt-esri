@@ -63,11 +63,11 @@ import edu.ucdavis.cstars.client.layers.Layer;
  * @author Justin Merz
  */
 public class MapWidget {
+  // counter used for creating unique map id's
+  private static int nextMapId = 0;
 
 	// esri.map object
 	private JavaScriptObject map = null;
-	// counter used for creating unique map id's
-	private static int nextMapId = 0;
 	
 	// Gwt added Control Layer
 	private AbsolutePanel controlLayer = new AbsolutePanel();
@@ -90,17 +90,8 @@ public class MapWidget {
 	 * @param onLoad - This is the map load handler to be fired once the map as been added to the dom and the
 	 * first layer has been initialized.  Can be null. 
 	 */
-	public MapWidget(SimplePanel mapPanel,  MapLoadHandler onLoad) {
-	    	assertLoaded();
-
-	    	this.mapPanel = mapPanel;
-	
-	    	
-	    	map = create(mapPanel.getElement().getId());
-			if( onLoad != null ) addLoadHandler(onLoad);
-
-			// inject controls layer
-			initControls();
+	public MapWidget(SimplePanel mapPanel, MapLoadHandler onLoad) {
+	  this(mapPanel, onLoad, null);
 	}
 
 	/**
@@ -113,16 +104,27 @@ public class MapWidget {
 	 * @param options - Optional parameters for the map.
 	 */
 	public MapWidget(SimplePanel mapPanel, MapLoadHandler onLoad, Options options) {
-	    assertLoaded();
+	  assertLoaded();
 	    
 	  this.mapPanel = mapPanel;
+	  
+	  // The ESRI api requires the wrapping div to have an id so automatically add one
+	  // if there isn't one set already...
+	  if (mapPanel.getElement() == null) {
+	    mapPanel.getElement().setId("map-widget-" + (++nextMapId));
+	  }
 
-	   map = create(mapPanel.getElement().getId(), options);
-	   if( onLoad != null ) addLoadHandler(onLoad);
+	  if (options == null) {
+	    map = create(mapPanel.getElement().getId());
+	  }
+	  else {
+	    map = create(mapPanel.getElement().getId(), options);
+	  }
+	  
+	  if( onLoad != null ) addLoadHandler(onLoad);
 	   
 		// TODO: inject controls layer
 		initControls();
-
 	}
 	
 	private void initControls() {
@@ -130,7 +132,6 @@ public class MapWidget {
 		
 		// TODO: inject the controls layer back into the map
 		mapPanel.add(controlLayer);
-		
 		
 		controlHandler = new ControlHandler(this, controlLayer);
 	}
@@ -143,7 +144,7 @@ public class MapWidget {
 	 * 
 	 * @param control - Control to be added to the map
 	 */
-	public void addControl(Control control){
+	public void addControl(Control control) {
 		controlHandler.addControl(control);
 	}
 	
@@ -1591,6 +1592,24 @@ public class MapWidget {
 			this["logo"] = logo;
 		}-*/;
 
+    /**
+     * Maximum visible scale of the map.
+     * 
+     * @since 3.3
+     */
+    public final native void setMaxScale(double maxScale) /*-{
+      this["maxScale"] = maxScale;
+    }-*/;
+  
+		/**
+		 * Minimum visible scale of the map.
+		 * 
+		 * @since 3.3
+		 */
+		public final native void setMinScale(double minScale) /*-{
+		  this["minScale"] = minScale;
+		}-*/;
+		
 		/**
 		 * Displays pan buttons on map. When false, the pan arrows never
 		 * display. The default is false. 
