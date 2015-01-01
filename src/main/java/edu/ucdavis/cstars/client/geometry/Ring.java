@@ -42,4 +42,7 @@ public class Ring extends JsArray<Point> {
 		return this[index];
 	}-*/;
 	
+	 public final native boolean isClockwise() /*-{
+     return $wnd.esri.geometry.isClockwise(this);
+   }-*/;
 }
