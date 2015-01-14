@@ -245,18 +245,13 @@ public class MapWidget {
 	 * Create esri.map object for IE using id of Div element and options
 	 */
 	private native JavaScriptObject create(String id, Options options) /*-{
-		
-		console.log($wnd.esri);
-		console.log(id);
-    console.log(options);
-		
 		var map = new $wnd.esri.Map(id, options);
 		map["__gwt_MapWidget"] = this;
 		return map;
 	}-*/;
 	
 	public void addInfoWindow(Widget panel) {
-		// TODO: figure this out in new strategdy
+		// TODO: figure this out in new strategy
 		//mapContainer.add(panel);
 	}
 	
