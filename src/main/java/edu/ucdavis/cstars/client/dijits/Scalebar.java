@@ -40,7 +40,9 @@ public class Scalebar {
 	
 	public static enum ScalebarUnit {
 		ENGLISH("english"),
-		METRIC("metric");
+		METRIC("metric"),
+		/** @since 3.4 */
+		DUAL("dual");
 		private String val;
 		private ScalebarUnit(String value){
 			val = value;
