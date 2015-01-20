@@ -1704,7 +1704,7 @@ public class MapWidget {
      * 
      * @since 3.3
      */
-		public void setSliderPosition(SliderPosition position) {
+		public final void setSliderPosition(SliderPosition position) {
 		  _setSliderPosition(position.getValue());
 		}
 		
@@ -1717,7 +1717,7 @@ public class MapWidget {
 		 * 
 		 * @since 3.3
 		 */
-		public void setSliderStyle(SliderStyle style) {
+		public final void setSliderStyle(SliderStyle style) {
 		  _setSliderStyle(style.getValue());
 		}
 		
