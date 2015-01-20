@@ -11,7 +11,7 @@ import com.google.gwt.core.client.JsArray;
  */
 public class PortalQueryResult<T extends JavaScriptObject> extends JavaScriptObject {
 	
-	private PortalQueryResult() {}
+	protected PortalQueryResult() {}
 	
 	/**
 	 * The query parameters for the next set of results.

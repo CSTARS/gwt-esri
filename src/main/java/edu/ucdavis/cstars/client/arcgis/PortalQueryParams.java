@@ -37,7 +37,7 @@ public class PortalQueryParams extends JavaScriptObject {
 		}
 	}
 
-	private PortalQueryParams() {}
+	protected PortalQueryParams() {}
 	
 	/**
 	 * The maximum number of results to be included. The default value is 10 and the maximum allowed value is 100.

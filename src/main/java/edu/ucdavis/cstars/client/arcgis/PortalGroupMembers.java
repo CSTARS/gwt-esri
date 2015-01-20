@@ -11,7 +11,7 @@ import com.google.gwt.core.client.JsArrayString;
  */
 public class PortalGroupMembers extends JavaScriptObject {
 	
-	public PortalGroupMembers() {}
+	protected PortalGroupMembers() {}
 	
 	/**
 	 * An array containing the user names for each administrator of the group.

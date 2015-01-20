@@ -7,6 +7,6 @@ package edu.ucdavis.cstars.client.layers;
  */
 public class InheritedDomain extends Domain {
 
-	public InheritedDomain() {}
+	protected InheritedDomain() {}
 	
 }
