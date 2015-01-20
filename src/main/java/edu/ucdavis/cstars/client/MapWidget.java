@@ -1466,6 +1466,37 @@ public class MapWidget {
 	
 	public static class Options extends JavaScriptObject {
 		
+	  public enum SliderPosition {
+	    TOP_LEFT("top-left"), 
+	    TOP_RIGHT("top-right"),
+	    BOTTOM_LEFT("bottom-left"),
+	    BOTTOM_RIGHT("bottom-right");
+	    
+	    private final String value;
+	    
+	    private SliderPosition(String value) { 
+	      this.value = value; 
+	    }
+	    
+	    public String getValue() {
+	      return value;
+	    }
+	  }
+	  
+	  public enum SliderStyle {
+	    SMALL("small"), LARGE("large");
+	    
+	    private final String value;
+	    
+	    private SliderStyle(String value) {
+	      this.value = value;
+	    }
+	    
+	    public String getValue() {
+	      return value;
+	    }
+	  }
+	  
 		protected Options() {}
 		
     public static Options create() {
@@ -1666,6 +1697,32 @@ public class MapWidget {
 		 */
 		public final native void showSlider(boolean show) /*-{
 			this["slider"] = show;
+		}-*/;
+		
+    /**
+     * Position of the slider within the map control.
+     * 
+     * @since 3.3
+     */
+		public void setSliderPosition(SliderPosition position) {
+		  _setSliderPosition(position.getValue());
+		}
+		
+		private final native void _setSliderPosition(String position) /*-{
+		  this["sliderPosition"] = position;
+		}-*/;
+		
+		/**
+		 * Defines the slider style.
+		 * 
+		 * @since 3.3
+		 */
+		public void setSliderStyle(SliderStyle style) {
+		  _setSliderStyle(style.getValue());
+		}
+		
+		private final native void _setSliderStyle(String style) /*-{
+		  this["sliderStyle"] = style;
 		}-*/;
 
 		/**
