@@ -1,0 +1,15 @@
+edu.ucdavis.cstars.client
+edu.ucdavis.cstars.client.arcgis
+edu.ucdavis.cstars.client.callback
+edu.ucdavis.cstars.client.control
+edu.ucdavis.cstars.client.dijits
+edu.ucdavis.cstars.client.dojo
+edu.ucdavis.cstars.client.event
+edu.ucdavis.cstars.client.geometry
+edu.ucdavis.cstars.client.layers
+edu.ucdavis.cstars.client.renderer
+edu.ucdavis.cstars.client.restful
+edu.ucdavis.cstars.client.symbol
+edu.ucdavis.cstars.client.tasks
+edu.ucdavis.cstars.client.toolbars
+edu.ucdavis.cstars.client.virtualearth
